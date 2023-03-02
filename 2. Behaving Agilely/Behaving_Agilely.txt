@@ -1,0 +1,37 @@
+Let's start with the very basics of Gherkin...
+
+The 5 Ws 
+- As {who, what or where}, 
+- I {want}
+- because {why}
+
+
+Example:
+
+As {a user of Acme.com}
+I {want to access content on my mobile phone}
+because {I might not always have my computer}
+
+
+THE HISTORY BEHIND
+-----------------------
+- There was a propototype of TDD in the 60s
+- In 1976, Glenford Meyers published the book, "Software Reliability" which said that developers should not be the ones testing their code. Then QA departments
+    were created and Testers and Developers went into WAR.
+- Kent Beck created extreme programming (XP), from which Test-driven development (TDD) evolved.
+    So TDD was introduced to developers as part ot the XP process. 
+        - Kent Beck created Smalltalk's unit-testing framework (SUnit), and TDD was officially implemented. 
+        - Kent Beck said that devs should write their own unit tests, one per class. 
+        - Kent Beck said that the development had to start with a test, so that we know when we're done.
+
+*The problem of TDD is that devs didn't now what to test, where to start developing or how to understand a failing test.
+
+- Dan North then introduced BDD in 2006, with a blog post title "Introducing BDD", and published by "Better Software" magazine.
+    - BDD is a mix of TDD and Agile methodology. 
+    - It focuses on the behaviour that the app will have once the development has concluded. 
+    - For each behavior described by Gherkin, there will be a test afterwards. 
+
+
+
+
+
