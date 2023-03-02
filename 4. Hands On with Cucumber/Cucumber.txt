@@ -1,0 +1,98 @@
+BDD Frameworks
+-------------------
+
+- Serenity: Open-source library. 
+    https://serenity-bdd.info/
+- SpecFlow: Open-source Cucumber solution for .NET developers.
+    https://specflow.org/
+- Jasmine: Open-source for JS developers.
+    https://jasmine.github.io/
+- JGiven: Not sure if it's open-source, but it's for Java developers.
+    https://jgiven.org/
+- Cucumber: Framework that uses a plain-language parser called Gherkin.
+    https://cucumber.io/
+
+
+
+Acceptance criteria
+Executable Specification > Test Automation > Living Documentation
+    Gherkin is supposed to help with the stuff listed above. 
+
+
+
+---------------------------------------
+
+Let's jump into the 1st exercise. 
+Ch03 > 03_03 > being > caffeinate
+
+1. From CMD, go to the folder itself. 
+2. Make sure you have both, Ruby and Bundler installed. 
+    Ruby -v 
+    Bundle -v
+
+3. Create a GemFile by doing so... "Gemfile" doesn't seem to need an extension. 
+4. Add the dependencies in the Gemfile. They should be grabbed from https://bundler.io/
+    In my case, the website says: 
+        source 'https://rubygems.org'
+        gem 'nokogiri'
+        gem 'rack', '~> 2.2.4'
+        gem 'rspec' 
+
+            *See PROBLEM #1 below
+
+5. Run "bundle"
+6. Run "cucumber --init" (this will create a "features" directory)
+
+7. Create a feature file under the "features" directory (it will be called "card_minimum.feature")
+
+8. Check out what I wrote in that file!
+9. Run "cucumber"
+
+10. Implement the steps definitions by using the snippets provided by cucumber. To do so:
+    a. Create a file under "steps_definitions" folder (called "steps.rb")
+    b. In the file newly created, paste the steps definitions provided by cucumber
+
+        Observations: Note that we went from this - "Maria orders $3 of coffee from Li" - to this - "Given("Maria orders ${int} of coffee from Li") do |int|"
+            if, instead of writing "3", we would have wrote 3.45" - we would see a "float" being added (instead of the "int" that we see)
+
+    c. Both Maria and Li will have to become objects of a class. To do so, I had to write this "maria = Customer.new" for Maria, and something similar for Li. 
+    d. Long story short: the following will be written:
+
+        Given("Maria orders ${int} of coffee from Li") do |int|
+            maria = Customer.new
+            li = Associate.new
+            price = int
+            maria.orders
+        end
+
+    e. If we run "cucumber" again, it tells us that Customer has not been initialized and then stops. So we will initialize both Customer and Associate. To do so...
+        a. Create a "lib" directory in the caffeinate one. 
+        b. In the new directory, create a file called "caffeinate.rb". Check what was written in there...
+        c. In the "steps.rb" file, we will add the following: "require 'caffeinate'"
+
+    f. And we continue creating methods, etc
+
+
+
+*IMPORTANT*
+It's important not to forget the "AND" statement. 
+
+
+
+PROBLEM #1
+------------
+In the website, no dependencies are added for the use of Cucumber. The Instructor is adding the following instead:
+
+    source 'https://rubygems.org'
+
+    gem 'cucumber', '~> 3.1.0'
+    gem 'rspec', '~> 3.7.0'
+
+What do do? I think I'm going to try with both... so I will be creating folder 03_03_b, with the same as the original folder, but adding the same 
+    dependencies added by the Instructor. 
+
+OUTCOME: The dependencies that are available in the Bundler website are not including cucumber, so I should have used the ones written by the I. 
+-------------------------------------------------------------
+
+
+
