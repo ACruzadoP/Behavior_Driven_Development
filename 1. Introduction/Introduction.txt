@@ -1,0 +1,21 @@
+Here we go...
+
+The 1st thing to keep in mind, is that this course is Done in Ruby as well... good that I have it installed already. 
+
+ruby -v
+ruby 3.1.3p185 (2022-11-24 revision 1a6b16756e) [x64-mingw-ucrt]
+
+I thought I was going to manage skipping the installion of the freaking Bundler, but looks like I will need it to install the gems. 
+
+To proceed, go with:
+
+"gem install bundler"
+
+bundler -v 
+Bundler version 2.4.7
+
+*important*
+-------------
+- After having installed bundler, "bundler" command will retrieve "Could not locate Gemfile", as you have to be in the directory where the Gemfile is located. 
+    Since I have no Gemfile and I don't even know how to create one, I will move on with the course for now...
+- Cucumber has to be installed too. But not yet...
